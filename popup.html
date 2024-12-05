@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>IndexedDB Cleanup Extension</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    button {
+      padding: 5px 10px;
+      background-color: #008080;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #154c4d;
+    }
+
+    .delete-btn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .delete-btn:hover {
+      background-color: #d32f2f;
+    }
+
+    input[type="checkbox"] {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>IndexedDB Cleanup Rules</h1>
+
+  <!-- Form to add new rule -->
+  <div>
+    <label for="url">URL:</label>
+    <input type="text" id="url" placeholder="Enter URL">
+    <label for="dbName">Database Name:</label>
+    <input type="text" id="dbName" placeholder="Enter Database Name">
+    <button id="addRule">Add Rule</button>
+    <br/>
+    <p>Use a <a href="https://regex101.com/">regex tester</a> with <b>ECMAScript</b> to test tour url pattern.</p>
+  </div>
+
+  <h2>Existing Rules</h2>
+  <!-- Table to display stored rules -->
+  <table id="rulesTable">
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th>Database Name</th>
+        <th>Active</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Table rows will be dynamically added here -->
+    </tbody>
+  </table>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
